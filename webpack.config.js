@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './dynamic-entry.js',
+  entry: `./${process.env.TYPE || 'static'}-entry.js`,
 
   output: {
     path: path.resolve(__dirname, 'dist'),
