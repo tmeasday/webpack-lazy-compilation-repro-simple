@@ -1,3 +1,1 @@
-// export const load = () => import('./stories/a');
-
-console.log('bam');
+console.log('5');

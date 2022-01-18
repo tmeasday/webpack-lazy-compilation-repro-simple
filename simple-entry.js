@@ -1,8 +1,10 @@
-// import './load';
+// HMR works
+// import('./load');
 
-import(/* webpackMode: "eager" */ './load');
-// import { load } from './load';
+// HMR fails
+import './load';
 
-// load();
+// HMR fails
+// import(/* webpackMode: "eager" */ './load');
 
 module.hot.accept('./load', () => console.log('new load'));

@@ -1,8 +1,8 @@
 ## Repro of lazy compilation + HMR problem
 
+0. Vary import technique in `simple-entry.js`
 1. Run `yarn webpack serve`
 2. Load http://localhost:8080
-3. Run `go('a')` in browser console
-4. Edit `a.js`.
+3. Edit `load.js`
 
-Notice "Aborted because ./dynamic-entry.js!lazy-compilation-proxy is not accepted"
+Notice only `import()` successfully HMRs
