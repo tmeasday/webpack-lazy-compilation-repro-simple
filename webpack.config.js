@@ -20,6 +20,6 @@ module.exports = {
   },
 
   experiments: {
-    lazyCompilation: true,
+    lazyCompilation: process.env.NO_LAZY ? false : true,
   },
 };
