@@ -1,4 +1,8 @@
-window.go = (name) => import(`./stories/${name}`);
+import { importFn } from './dynamic-importFn';
 
-module.hot.accept('./stories/a', () => console.log('new a'));
-module.hot.accept('./stories/b', () => console.log('new a'));
+window.go = importFn;
+
+module.hot.accept('./dynamic-importFn', () => console.log('new importFn'));
+// module.hot.accept('./dynamic-importFn!lazy-compilation-proxy', () =>
+//   console.log('new importFn [lazy]')
+// );

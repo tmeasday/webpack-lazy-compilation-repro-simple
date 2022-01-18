@@ -1,9 +1,5 @@
-const imports = {
-  a: () => import('./stories/a'),
-  b: () => import('./stories/b'),
-};
+import { importFn } from './static-importFn';
 
-window.go = (name) => imports[name]();
+window.go = importFn;
 
-module.hot.accept('./stories/a', () => console.log('new a'));
-module.hot.accept('./stories/b', () => console.log('new a'));
+module.hot.accept('./static-importFn', () => console.log('new importFn'));
