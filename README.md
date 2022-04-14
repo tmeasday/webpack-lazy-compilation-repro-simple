@@ -1,8 +1,12 @@
 ## Repro of lazy compilation + HMR problem
 
-0. Vary import technique in `simple-entry.js`
-1. Run `yarn webpack serve`
-2. Load http://localhost:8080
-3. Edit `load.js`
+1. `yarn webpack serve`
+2. Open browser, ensure "preserve log" is on
+3. Run `all()`
+4. Notice logs:
 
-Notice only `import()` successfully HMRs, but also fails if you include an irrelevant `import`.
+```
+GET http://localhost:8080/main.01ce74ce55d820aed88a.hot-update.json 404 (Not Found)
+[HMR] Cannot find update. Need to do a full reload!
+[HMR] (Probably because of restarting the webpack-dev-server)
+```
