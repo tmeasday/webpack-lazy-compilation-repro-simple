@@ -14,4 +14,6 @@ module.exports = {
   experiments: {
     lazyCompilation: process.env.NO_LAZY ? false : true,
   },
+
+  resolve: { fallback: { path: false } },
 };
